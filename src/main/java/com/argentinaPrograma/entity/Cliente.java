@@ -17,8 +17,13 @@ public class Cliente {
     @Column(name = "clienteId")
     private Long id;
 
+    @Column(columnDefinition = "TEXT")
     private String razonSocial;
+
+    @Column(columnDefinition = "TEXT")
     private String Cuit;
+
+    @Enumerated(EnumType.STRING)
     private Set<Servicio> serviciosContratados;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)

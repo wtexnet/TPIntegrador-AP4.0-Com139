@@ -15,6 +15,7 @@ public class Problema {
     @Column(name = "problemaId")
     private Long id;
 
+    @Column(columnDefinition = "TEXT")
     private String descripcion;
 
     @OneToOne(mappedBy = "problema", cascade = CascadeType.ALL)

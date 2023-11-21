@@ -21,6 +21,7 @@ public class Incidente {
     @JoinColumn(name="cliente_id", referencedColumnName="clienteId")
     private Cliente cliente;
 
+    @Enumerated(EnumType.STRING)
     private Set<Servicio> servicios;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -33,6 +34,8 @@ public class Incidente {
 
     private LocalDateTime fechaIngreso;
     private LocalDateTime fechaResolucion;
+
+    @Enumerated(EnumType.STRING)
     private EstadoIncidente estado;
 
 }
