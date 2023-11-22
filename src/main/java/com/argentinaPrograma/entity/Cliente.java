@@ -17,7 +17,7 @@ public class Cliente {
     @Column(name = "clienteId")
     private Long id;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT", name = "razon_social")
     private String razonSocial;
 
     @Column(columnDefinition = "TEXT")

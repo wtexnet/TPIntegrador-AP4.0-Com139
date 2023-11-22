@@ -30,9 +30,13 @@ public class Incidente {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="tecnicoAsignado_id", referencedColumnName="tecnicoId")
+    @Column(name = "tecnico_asignado")
     private Tecnico tecnicoAsignado;
 
+    @Column(name = "fecha_ingreso")
     private LocalDateTime fechaIngreso;
+
+    @Column(name = "fecha_resolucion")
     private LocalDateTime fechaResolucion;
 
     @Enumerated(EnumType.STRING)

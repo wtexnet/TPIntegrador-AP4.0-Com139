@@ -26,6 +26,7 @@ public class Tecnico {
     private Set<Incidente> incidentes;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "medios_de_notificacion")
     private Set<Notificacion> mediosDeNotificacion;
 
 
