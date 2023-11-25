@@ -18,7 +18,8 @@ public class Problema {
     @Column(columnDefinition = "TEXT")
     private String descripcion;
 
-    @OneToOne(mappedBy = "problema", cascade = CascadeType.ALL)
+//    @OneToOne(mappedBy = "problema", cascade = CascadeType.ALL)
+//    @JoinColumn(name = "incidente_id")
     private Incidente incidente;
 
     @Column(name = "complejidad")

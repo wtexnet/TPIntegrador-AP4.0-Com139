@@ -4,31 +4,23 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.Set;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "tecnico")
-public class Tecnico {
+public class Tecnico extends Persona{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "tecnicoId")
-    private Long id;
+    @ManyToMany(targetEntity = Servicio.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Servicio> especialidad;
 
-    @Column(columnDefinition = "TEXT")
-    private String nombre;
-
-    @Enumerated(EnumType.STRING)
-    private Set<Servicio> especialidades;
-
-    @OneToMany(mappedBy = "tecnico", cascade = CascadeType.ALL)
+//    @OneToMany(mappedBy = "tecnico", cascade = CascadeType.ALL)
+//    @JoinColumn(name = "incidente_id")
     private Set<Incidente> incidentes;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "medios_de_notificacion")
     private Set<Notificacion> mediosDeNotificacion;
-
-
 
 }
